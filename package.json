@@ -1,0 +1,19 @@
+
+{
+    "name": "@opendesarrollo/encripta-js",
+    "version": "0.1.0",
+    "description": "Biblioteca criptográfica modular de código abierto para JavaScript.",
+    "type": "module",
+    "exports": {
+        "./aleatorio": "./src/aleatorio/index.js",
+        "./otp": "./src/otp/index.js"
+    },
+    "scripts": {
+        "test": "node --test"
+    },
+    "license": "Apache-2.0",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/opendesarrollo/encripta-js.git"
+    }
+}
