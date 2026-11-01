@@ -17,11 +17,15 @@ export function BytesAleatorios(longitud) {
     }
 
     const bytesAleatorios = new Uint8Array(longitud);
+    const limite = 65536;
 
-    for (let i = 0; i < longitud; i += 65536) {
-        crypto.getRandomValues(
-            bytesAleatorios.subarray(i, Math.min(i + 65536, longitud))
-        );
+    for (let i = 0; i < longitud; i += limite) {
+        const inicio = i;
+        const fin = Math.min(inicio + limite, longitud);
+
+        const bloque = bytesAleatorios.subarray(inicio, fin);
+
+        crypto.getRandomValues(bloque);
     }
 
     return bytesAleatorios;
